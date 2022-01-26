@@ -5,7 +5,25 @@
 *
 *
 * ## Usage
+* ''' provider "dns" {
+*  update {
+*   server = "127.0.0.1"
+*  }
+*}
+
+* module "dns_updater" {
 *
+* source = "../../."
+*
+* json_data{
+*    "addresses": [
+*       "192.168.100.1"
+*    ],
+*    "ttl": 60,
+*    "zone": "example.com.",
+*    "dns_record_type": "a"
+*}
+*'''
 * ### Quick Example
 *
 * ```hcl
